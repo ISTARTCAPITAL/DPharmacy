@@ -1,0 +1,223 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+-- Database: `dpharmacy`
+--
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` int(11) NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `role` varchar(100) NOT NULL DEFAULT 'admin',
+  `avatar` varchar(255) NOT NULL DEFAULT 'avatar.png'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `fname`, `lname`, `email`, `phone`, `password`, `role`, `avatar`) VALUES
+(2, 'Admin', 'admin', 'admin@admin.com', '454842575', '$2y$10$tlUGgf2KaQHlV4Eu5.UQIusowevT5Jv584r7jBvuHpRPpJl7HmJfu', 'admin', 'images.png');
+
+-- --------------------------------------------------------
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doctors`
+--
+
+CREATE TABLE `doctors` (
+  `id` int(11) NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `role` varchar(100) NOT NULL DEFAULT 'doctor',
+  `avatar` varchar(255) NOT NULL DEFAULT 'avatar.png'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `doctors`
+--
+
+INSERT INTO `doctors` (`id`, `fname`, `lname`, `email`, `phone`, `password`, `role`, `avatar`) VALUES
+(8, 'Doctor', 'One', 'doctor@gmail.com', '454586225', '$2y$10$Yau5CEVy5S76JTHVym4MI.6UB.eK0QwY/Yd8rm8ad.GOvR8rmXNWG', 'doctor', 'avatar.png');
+
+-- --------------------------------------------------------
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pharmacists`
+--
+
+CREATE TABLE `pharmacists` (
+  `id` int(11) NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `role` varchar(100) NOT NULL DEFAULT 'pharmacist',
+  `avatar` varchar(255) NOT NULL DEFAULT 'avatar.png'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `pharmacists`
+--
+
+INSERT INTO `pharmacists` (`id`, `fname`, `lname`, `email`, `phone`, `password`, `role`, `avatar`) VALUES
+(7, 'Pharmacist', 'Two', 'pharmacist@two.com', '01700000000', '$2y$10$5pi1bPBuaQt4s83hGFcTH.eRZvFqsMDDN.onp6.HJENwo0jqJqKjq', 'pharmacist', 'avatar.png'),
+(8, 'Pharmacist', 'Three', 'pharmacist@three.com', '0170000000', '$2y$10$RqNzWY0cxl9UCf01J.N9LOTTPb7GKarWAwM7/i8T8koNoFqQQk1Li', 'pharmacist', 'avatar.png'),
+(9, 'Pharmacist', 'Four', 'pharmacist@four.com', '01700000000', '$2y$10$GVggPVg5obYkaX87nzDA/u7uyMA.ej4A96RNXtLXpFWeENLxed.T6', 'pharmacist', 'avatar.png'),
+(10, 'Pharmacist', 'Five', 'pharmacist@five.com', '01700000000', '$2y$10$It21v0CAlfE8vMM4BN2hIukLIiR/RFBWvRdN3PirzkW6.r28Ls0AW', 'pharmacist', 'avatar.png');
+
+-- --------------------------------------------------------
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patients`
+--
+
+CREATE TABLE `patients` (
+  `id` int(11) NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `role` varchar(100) NOT NULL DEFAULT 'patient',
+  `avatar` varchar(255) NOT NULL DEFAULT 'avatar.png'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `patients`
+--
+
+INSERT INTO `patients` (`id`, `fname`, `lname`, `email`, `phone`, `password`, `role`, `avatar`) VALUES
+(9, 'Patient', 'One', 'patient@one.com', '01700000000', '$2y$10$QcBETp.yv7xnE2gtnGKN2eQiwCW4jwobEPoOBGK/qQ3knrW4OsEdG', 'patient', 'avatar.png');
+
+--
+
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `requests`
+--
+
+CREATE TABLE `requests` (
+  `requestTitle` varchar(100) NOT NULL,
+  `requestDesc` text NOT NULL,
+  `patientID` int(11) NOT NULL,
+  `requestStatus` varchar(100) NOT NULL,
+  `requestLocation` varchar(200) NOT NULL,
+  `imageURL` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `requests`
+--
+
+INSERT INTO `requests` (`requestTitle`, `requestDesc`,`patientID`, `requestStatus`, `requestLocation`, `imageURL`) VALUES
+('fever', 'bad bad bad', 4, '', '', 'http://192.168.1.60/Android/api/msu.jpg'),
+('headache', 'feeling rather not self', '17.8216', '31.0492', 4, '', 'Harare', 'http://192.168.1.60/Android/api/uploads/add.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transactions`
+--
+
+CREATE TABLE `transactions` (
+  `id` int(11) NOT NULL,
+  `requestID` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `userType` varchar(100) NOT NULL,
+  `transactionStatus` varchar(200) NOT NULL,
+  `pharmacistID` int(11) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `userID` int(11) NOT NULL,
+  `userFname` varchar(100) NOT NULL,
+  `userLname` varchar(100) NOT NULL,
+  `userPhone` varchar(100) NOT NULL,
+  `userPassword` varchar(100) NOT NULL,
+  `userType` varchar(100) NOT NULL,
+  `userQuestion` text NOT NULL,
+  `userAnswer` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userID`, `userFname`, `userLname`, `userPhone`, `userPassword`, `userType`, `userQuestion`, `userAnswer`) VALUES
+(1, 'simbarashe', 'marindwa', '0776815030', 'password123/', 'Admin', 'who is our president', 'ed'),
+(2, 'palisa', 'mapira', '0784555666', 'password', 'Technician', 'which song', 'ruregerero'),
+(3, 'Blessing', 'Sithole', '0773000111', 'password', 'Resident', 'who is he', 'blesto'),
+(4, 'scott', 'edward', '009966332211', 'password', 'Resident', 'is scott an e', 'yes edward');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `transactions`
+--
+ALTER TABLE `transactions`
+  ADD PRIMARY KEY (`transactionsID`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`userID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tasks`
+--
+ALTER TABLE `transactions`
+  MODIFY `transactionsID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
