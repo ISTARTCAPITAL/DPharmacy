@@ -12,5 +12,8 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
-
+    $router->resource('users', UserController::class);
+    $router->resource('patients', PatientController::class);
+    $router->resource('doctors', DoctorController::class);
+    $router->resource('pharmacists', PharmacistController::class);
 });

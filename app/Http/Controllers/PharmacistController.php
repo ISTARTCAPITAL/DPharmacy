@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Phamarcist;
+use App\Models\Pharmacist;
 use Illuminate\Http\Request;
 
-class PhamarcistController extends Controller
+class PharmacistController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PhamarcistController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Phamarcist  $phamarcist
+     * @param  \App\Models\Pharmacist  $Pharmacist
      * @return \Illuminate\Http\Response
      */
-    public function show(Phamarcist $phamarcist)
+    public function show(Pharmacist $Pharmacist)
     {
         //
     }
@@ -52,10 +52,10 @@ class PhamarcistController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Phamarcist  $phamarcist
+     * @param  \App\Models\Pharmacist  $Pharmacist
      * @return \Illuminate\Http\Response
      */
-    public function edit(Phamarcist $phamarcist)
+    public function edit(Pharmacist $Pharmacist)
     {
         //
     }
@@ -64,10 +64,10 @@ class PhamarcistController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Phamarcist  $phamarcist
+     * @param  \App\Models\Pharmacist  $Pharmacist
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Phamarcist $phamarcist)
+    public function update(Request $request, Pharmacist $Pharmacist)
     {
         //
     }
@@ -75,10 +75,10 @@ class PhamarcistController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Phamarcist  $phamarcist
+     * @param  \App\Models\Pharmacist  $Pharmacist
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Phamarcist $phamarcist)
+    public function destroy(Pharmacist $Pharmacist)
     {
         //
     }
