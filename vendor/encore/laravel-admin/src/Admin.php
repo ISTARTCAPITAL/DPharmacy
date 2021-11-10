@@ -69,7 +69,7 @@ class Admin
      */
     public static function getLongVersion()
     {
-        return sprintf('Laravel-admin <comment>version</comment> <info>%s</info>', self::VERSION);
+        return sprintf('D Pharmacy <comment>version</comment> <info>%s</info>', self::VERSION);
     }
 
     /**
