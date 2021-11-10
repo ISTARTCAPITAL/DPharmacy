@@ -184,6 +184,7 @@ class ComposerStaticInitc25ccaeab56c5c4a759a0d5b6b4e06ac
         array (
             'Asm89\\Stack\\' => 12,
             'App\\' => 4,
+            'AndreasElia\\PostmanGenerator\\' => 29,
         ),
     );
 
@@ -544,6 +545,10 @@ class ComposerStaticInitc25ccaeab56c5c4a759a0d5b6b4e06ac
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+        'AndreasElia\\PostmanGenerator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/andreaselia/laravel-api-to-postman/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -557,11 +562,16 @@ class ComposerStaticInitc25ccaeab56c5c4a759a0d5b6b4e06ac
     );
 
     public static $classMap = array (
+        'AndreasElia\\PostmanGenerator\\Commands\\ExportPostmanCommand' => __DIR__ . '/..' . '/andreaselia/laravel-api-to-postman/src/Commands/ExportPostmanCommand.php',
+        'AndreasElia\\PostmanGenerator\\PostmanGeneratorServiceProvider' => __DIR__ . '/..' . '/andreaselia/laravel-api-to-postman/src/PostmanGeneratorServiceProvider.php',
         'App\\Admin\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Admin/Controllers/AuthController.php',
         'App\\Admin\\Controllers\\ExampleController' => __DIR__ . '/../..' . '/app/Admin/Controllers/ExampleController.php',
         'App\\Admin\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Admin/Controllers/HomeController.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\API\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/AuthController.php',
+        'App\\Http\\Controllers\\API\\BaseController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/BaseController.php',
+        'App\\Http\\Controllers\\API\\TaskController' => __DIR__ . '/../..' . '/app/Http/Controllers/API/TaskController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -572,6 +582,8 @@ class ComposerStaticInitc25ccaeab56c5c4a759a0d5b6b4e06ac
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Resources\\Task' => __DIR__ . '/../..' . '/app/Http/Resources/Task.php',
+        'App\\Models\\Task' => __DIR__ . '/../..' . '/app/Models/Task.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

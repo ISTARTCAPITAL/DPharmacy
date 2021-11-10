@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'c81431ae5ad0452b6b5d1c2863d5a389d88106c4',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'andreaselia/laravel-api-to-postman' => array(
+            'pretty_version' => 'v1.7.10',
+            'version' => '1.7.10.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../andreaselia/laravel-api-to-postman',
+            'aliases' => array(),
+            'reference' => '7b84f6715b2e2cd4d8f9edb28c803e71ed22fd5a',
+            'dev_requirement' => false,
+        ),
         'asm89/stack-cors' => array(
             'pretty_version' => 'v2.0.3',
             'version' => '2.0.3.0',
@@ -449,12 +458,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'c81431ae5ad0452b6b5d1c2863d5a389d88106c4',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
