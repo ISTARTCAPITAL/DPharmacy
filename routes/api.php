@@ -24,12 +24,22 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Auth::routes();
 
-Route::middleware('auth:sanctum')->group( function () {
-    Route::resource('tasks', TaskController::class);
-});
+// Route::middleware('auth:sanctum')->group( function () {
+//     Route::resource('tasks', TaskController::class);
+// });
 
 
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 
-URL::forceScheme('https');
+// URL::forceScheme('https');
+
+Route::middleware(['roleChecker:Admin,Patient,Doctor,Phamacist']);
+Route::middleware(['roleChecker:Admin,Patient,Doctor,Phamacist']);
+Route::middleware(['roleChecker:Admin,Patient,Doctor,Phamacist']);
+Route::middleware(['roleChecker:Admin,Patient,Doctor,Phamacist']);
+
+
+Route::middleware(['roleChecker:Admin,Patient,Doctor,Phamacist'])->group( function () {
+    Route::resource('tasks', TaskController::class);
+});

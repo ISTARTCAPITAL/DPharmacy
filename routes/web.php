@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-URL::forceScheme('https');
+// URL::forceScheme('https');
