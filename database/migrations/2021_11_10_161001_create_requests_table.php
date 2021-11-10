@@ -15,6 +15,11 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('description');
+            $table->foreignId('patient_id')->constrained('patients');
+            $table->string('status');
+            $table->string('location');
             $table->timestamps();
         });
     }

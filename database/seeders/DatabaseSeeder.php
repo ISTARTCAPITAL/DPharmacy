@@ -15,9 +15,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $role_admin = new Roles();
-        $role_admin->name = 'Admin';
-        $role_admin->save();
+        // $role_admin = new Roles();
+        // $role_admin->name = 'Admin';
+        // $role_admin->save();
 
         $role_user = new Roles();
         $role_user->name = 'Patient ';
