@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Doctor;
+use App\Models\User;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -75,7 +76,7 @@ class DoctorController extends AdminController
     {
         $form = new Form(new Doctor());
 
-        $form->number('user_id', __('User id'));
+        $form->select('user_id', __('User id'))->options(User::all()->pluck('username','id'));
         $form->text('name', __('Name'));
         $form->text('surname', __('Surname'));
         $form->text('sex', __('Sex'));

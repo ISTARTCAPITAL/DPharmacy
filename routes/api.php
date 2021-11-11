@@ -21,23 +21,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Auth::routes();
-
-// Route::middleware('auth:sanctum')->group( function () {
-//     Route::resource('tasks', TaskController::class);
-// });
-
-
 Route::post('login', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 
-// URL::forceScheme('https');
+Route::middleware(['roleChecker:Patient,Doctor,Phamacist']);
+Route::middleware(['roleChecker:Patient,Doctor,Phamacist']);
+Route::middleware(['roleChecker:Patient,Doctor,Phamacist']);
+Route::middleware(['roleChecker:Patient,Doctor,Phamacist']);
 
-Route::middleware(['roleChecker:Admin,Patient,Doctor,Phamacist']);
-Route::middleware(['roleChecker:Admin,Patient,Doctor,Phamacist']);
-Route::middleware(['roleChecker:Admin,Patient,Doctor,Phamacist']);
-Route::middleware(['roleChecker:Admin,Patient,Doctor,Phamacist']);
-
-
-Route::middleware(['roleChecker:Admin,Patient,Doctor,Phamacist'])->group( function () {
+Route::middleware(['roleChecker:Patient,Doctor,Phamacist'])->group( function () {
 });
