@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PharmacistResource;
 use App\Models\Pharmacist;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class PharmacistController extends Controller
      */
     public function index()
     {
-        //
+        return PharmacistResource::collection(Pharmacist::paginate(20));
     }
 
     /**

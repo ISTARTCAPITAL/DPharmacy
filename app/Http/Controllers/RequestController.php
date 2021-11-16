@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\RequestResource;
 use App\Models\Request;
-use Illuminate\Http\Request;
 
 class RequestController extends Controller
 {
@@ -14,7 +14,7 @@ class RequestController extends Controller
      */
     public function index()
     {
-        //
+        return RequestResource::collection(Request::paginate(20));
     }
 
     /**
@@ -67,10 +67,7 @@ class RequestController extends Controller
      * @param  \App\Models\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Request $request)
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.

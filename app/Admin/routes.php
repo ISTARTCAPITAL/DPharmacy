@@ -16,4 +16,6 @@ Route::group([
     $router->resource('patients', PatientController::class);
     $router->resource('doctors', DoctorController::class);
     $router->resource('pharmacists', PharmacistController::class);
+    $router->resource('requests', RequestController::class);
+    $router->resource('transactions', TransactionController::class);
 });

@@ -14,6 +14,15 @@ class RequestResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'name'=> $this->name,
+            'description' => $this->description,
+            'patient_id' => $this->patient_id,
+            // 'patient' => new PatientResource($this->patient_id),
+            'status' => $this->status,
+            'location' => $this->location,
+            'created_at' => $this->created_at,
+        ];
     }
 }
